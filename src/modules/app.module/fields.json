@@ -9,5 +9,32 @@
     "name": "initial_count",
     "required": false,
     "type": "number"
+  },
+  {
+    "label": "Event group",
+    "name": "event_group",
+    "type": "group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 999,
+      "sorting_label_field" : "event_name",
+      "default" : null
+    },
+    "children": [
+      {
+        "label": "Event name",
+        "name": "event_name",
+        "type": "text",
+        "default": ""
+      },
+      {
+        "label": "Event Description",
+        "name": "event_description",
+        "type": "text",
+        "default": ""
+      }
+    ]
   }
 ]

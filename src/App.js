@@ -24,6 +24,12 @@ function App({ moduleData }) {
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>
+        {moduleData.event_group.length > 0 && moduleData.event_group.map((item) => {
+            return <div className="jake-dl__item">
+                <dt className="jake-dl__item-title">{item.event_name}</dt>
+                <dd className="jake-dl__item-desc">{item.event_description}</dd>
+            </div>
+        })}
       <Card initialClickCount={moduleData.initial_count} />
     </div>
   );

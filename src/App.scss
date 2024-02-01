@@ -1,4 +1,13 @@
+body {
+  position: relative;
+}
+
 .cms-react-boilerplate__container {
+  /*width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;*/
   text-align: center;
   background-color: #282c34;
   display: flex;
@@ -7,4 +16,27 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.jake-dl {
+  /* user can change border */
+  border-bottom:1px solid #ccc;
+  /* user can change */
+  max-width:500px;
+}
+.jake-dl__item {
+  /* user can change border */
+  border-top:1px solid #ccc;
+}
+.jake-dl__item .jake-dl__item-title  {
+  /* user can change color */
+  background-color:#e2e2e2;
+}
+.jake-dl__item .jake-dl__item-desc  {
+  margin:0;
+  padding:0;
+}
+.jake-dl__item .jake-dl__item-title, .jake-dl__item .jake-dl__item-desc {
+  /* style - user can change */
+  padding:1rem;
 }
