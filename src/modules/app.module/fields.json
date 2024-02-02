@@ -34,6 +34,34 @@
         "name": "event_description",
         "type": "text",
         "default": ""
+      },
+      {
+        "name": "event_start",
+        "label": "Event Start",
+        "required": false,
+        "locked": false,
+        "type": "datetime",
+        "default": 1577854800000
+      },
+      {
+        "name" : "event_image",
+        "label" : "Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : true,
+        "type" : "image",
+        "default" : {
+          "size_type" : "exact",
+          "src" : "../../images/grayscale-mountain.png",
+          "alt" : "event-image",
+          "loading" : "lazy",
+          "width" : 128,
+          "height" : 128,
+          "max_width" : 128,
+          "max_height" : 128
+        }
       }
     ]
   }
