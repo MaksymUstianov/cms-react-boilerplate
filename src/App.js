@@ -11,24 +11,21 @@ function App({moduleData}) {
         'all of your data typically accessed via the "module" keyword in HubL is available as JSON here!',
         moduleData,
     );
+
+    const getCustomDateTime = (timestamp, offsetHours) => {
+        const date = new Date(timestamp);
+        const offsetMilliseconds = offsetHours * 60 * 60 * 1000; // Convert offset hours to milliseconds
+        const dateWithOffset = new Date(date.getTime() + offsetMilliseconds);
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', timeZoneName: 'short'  };
+        return dateWithOffset.toLocaleString('en-US', options);
+    }
+
     return (
         <div className="cms-react-boilerplate__container">
-            <div className="spinning-logo__container">
-                <SpinningLogo src={reactLogo} alt="react logo"/>
-                <SpinningLogo
-                    src={sprocketLogo}
-                    alt="sprocket logo"
-                    isSprocket={true}
-                />
-            </div>
-            <p>
-                Edit <code>src/App.js</code> and save to reload.
-            </p>
             {moduleData.event_group.length > 0 && moduleData.event_group.map((item) => {
                 const timestamp = item.event_start;
-                const date = new Date(timestamp);
-                const options = { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-                const readableDateTime = date.toLocaleString('en-US', options);
+                const userOffsetHours = -7;
+                const readableDateTime = getCustomDateTime(timestamp, userOffsetHours);
 
                 return <div className="jake-dl__item">
                     <dt className="jake-dl__item-title">{item.event_name}</dt>

@@ -3,11 +3,11 @@ body {
 }
 
 .cms-react-boilerplate__container {
-  /*width: 100%;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   position: absolute;
   left: 0;
-  top: 0;*/
+  top: 0;
   text-align: center;
   background-color: #282c34;
   display: flex;
